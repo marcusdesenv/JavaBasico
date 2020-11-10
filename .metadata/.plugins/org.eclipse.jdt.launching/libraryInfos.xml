@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre" version="1.8.0_265">
+<bootpath>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\se-service.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\rt.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\resources.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\jsse.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\charsets.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="D:\Programas Alelo\OpenJDK8\jdk8u265-b01" version="1.8.0_265">
+<bootpath>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\se-service.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\rt.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\resources.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\jsse.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\charsets.jar"/>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\Programas Alelo\OpenJDK8\jdk8u265-b01\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
