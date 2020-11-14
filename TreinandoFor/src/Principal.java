@@ -64,6 +64,13 @@ public class Principal {
 			}
 			System.out.println("Não encontrei um b");
 		}
+		for(String a: texto.split("") ) {
+			if(a.toLowerCase().contains("b")) {
+				System.out.print("Encontrei um b");
+				break;
+			}
+			System.out.println("Não encontrei um b");
+		}
 				
 		
 	}
