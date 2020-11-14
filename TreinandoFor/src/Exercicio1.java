@@ -1,16 +1,18 @@
 /**
+ * 
+ */
+
+/**
  * @author marcu
  *
  */
-public class Teste {
+public class Exercicio1 {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-        
-        System.out.println("Testando..");
+		// TODO Auto-generated method stub
 
 	}
 
