@@ -57,7 +57,7 @@ public class Principal {
 				controleAchouA = 2;
 			}
 		}
-		for(String a: texto.split("") ) {
+		for(String a : texto.split("") ) {
 			if(a.toLowerCase().contains("b")) {
 				System.out.print("Encontrei um b");
 				continue;
