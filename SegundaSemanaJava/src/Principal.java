@@ -8,51 +8,19 @@ import java.util.Scanner;
  * @author marcu
  *
  */
-public class DesafioAula6 {
+public class Principal {
 
-	public static String lerValor(String pergunta, Scanner sc) {
-		System.out.println(pergunta);
-		return sc.next();
-	}
-
-	public static float lerValor(String pergunta, Scanner sc, float valor) {
-		System.out.println(pergunta);
-		return sc.nextFloat();
-	}
-
-	public static int lerValor(String pergunta, Scanner sc, int valor) {
-		System.out.println(pergunta);
-		return sc.nextInt();
-	}
-
-	public static char lerValor(String pergunta, Scanner sc, char valor) {
-		System.out.println(pergunta);
-		String retorno = sc.next();
-		return retorno.charAt(0);
-	}
-
-	/**
-	 * 
-	 * @param args
-	 */
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Crie 3 arrays com 6 posicoes
-		// primeiro array com nomes (String)
-		// segundo array com peso (float)
-		// terceiro array com sexo (char) // F,M
-		// Definir o tamanho dos array com base em uma entrada
-		// Crie um menu usando o switch com as opções do tipo (1 a 3):
-		// apresentarTodosOsValoresDoArray,
-		// alterarTodoOArray, alterarArrayPorPosicao
-		// utilize o while para parar o programa somente quando informar o valor 0
-		
-
+		// vamos Abstrair
 		Scanner sc = new Scanner(System.in);
-		int tamanho = lerValor("Qual o tamanho do array ?", sc, 0);
+		int tamanho = lerValor("Qual  tamanho do array ?", sc, 0);
+		Pessoa p = new Pessoa();
+		// Crie um Array de pessoas e passem a utiliza-lo no programa
 
+		Pessoa[] pessoas = new Pessoa[tamanho];
 		String[] nomes = new String[tamanho];
 		float[] pesos = new float[tamanho];
 		char[] sexos = new char[tamanho];
@@ -67,7 +35,12 @@ public class DesafioAula6 {
 				break;
 			case 1:
 				for (int i = 0; i < tamanho; i++) {
-					System.out.printf("Nome: %s \nPeso: %.2f\nSexo: %s\n", nomes[i], pesos[i], sexos[i]);
+					Pessoa pConsulta = pessoas[i];
+					if (pConsulta != null) {
+						System.out.printf("Nome: %s \nPeso: %.2f\nSexo: %s\n",
+								pConsulta.getNome(), pConsulta.getPeso(),
+								pConsulta.getSexo());
+					}
 				}
 				break;
 			case 2:
@@ -117,6 +90,25 @@ public class DesafioAula6 {
 			sexos[i] = lerValor("Informe o sexo (F/M): ", sc, sexos[i]);
 		}
 	}
-	// Criem mais uma sobrecarga do método adicionarValorArray para o opção 4
 
+	public static String lerValor(String pergunta, Scanner sc) {
+		System.out.println(pergunta);
+		return sc.next();
+	}
+
+	public static float lerValor(String pergunta, Scanner sc, float valor) {
+		System.out.println(pergunta);
+		return sc.nextFloat();
+	}
+
+	public static int lerValor(String pergunta, Scanner sc, int valor) {
+		System.out.println(pergunta);
+		return sc.nextInt();
+	}
+
+	public static char lerValor(String pergunta, Scanner sc, char valor) {
+		System.out.println(pergunta);
+		String retorno = sc.next();
+		return retorno.charAt(0);
+	}
 }
