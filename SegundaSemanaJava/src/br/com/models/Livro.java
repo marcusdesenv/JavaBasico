@@ -1,8 +1,9 @@
+package br.com.models;
 
-public class Livro {
-	
+//  Abstração, Encapsulamento ,Herança, Polimofismo
+public class Livro extends ClassePadrao {
+
 	private Integer anoDePublicacao;
-	private String nome;
 	private String autor;
 	private String editora;
 	private Integer classificacao;
@@ -13,7 +14,7 @@ public class Livro {
 
 	public Livro(Integer anoDePublicacao, String nome, String autor, String editora, Integer classificacao) {
 		this.anoDePublicacao = anoDePublicacao;
-		this.nome = nome;
+		this.setNome(nome);
 		this.autor = autor;
 		this.editora = editora;
 		this.classificacao = classificacao;
@@ -41,14 +42,6 @@ public class Livro {
 
 	public void setAnoDePublicacao(Integer anoDePublicacao) {
 		this.anoDePublicacao = anoDePublicacao;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getAutor() {

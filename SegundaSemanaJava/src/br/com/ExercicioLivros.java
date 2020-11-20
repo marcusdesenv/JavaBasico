@@ -1,4 +1,7 @@
+package br.com;
 import java.util.Scanner;
+
+import br.com.models.Livro;
 
 /**
  * 

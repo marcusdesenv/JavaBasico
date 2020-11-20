@@ -1,4 +1,4 @@
-import java.io.IOException;
+package br.com;
 import java.util.Scanner;
 
 public class Leitor {

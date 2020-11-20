@@ -1,27 +1,27 @@
+package br.com;
 
-public class Pessoa {
+import br.com.models.ClassePadrao;
 
-	private String nome;
+public class Pessoa extends ClassePadrao {
+
 	private Float peso;
 	private Character sexo;
 
 	// Método Construtor Executa ao Criar uma instância da Classe
 	public Pessoa() {
-
+		super();
 	}
 
 	public Pessoa(String nome, Float peso, Character sexo) {
-		this.nome = nome;
+		super();
+		this.setNome(nome);
 		this.peso = peso;
 		this.sexo = sexo;
 	}
 
+	@Override
 	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+		return "Pessoa: " + this.nome;
 	}
 
 	public Float getPeso() {
