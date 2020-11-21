@@ -2,6 +2,7 @@ package br.com;
 import java.util.Scanner;
 
 import br.com.models.Livro;
+import br.com.util.Leitor;
 
 /**
  * 

@@ -6,7 +6,7 @@ import br.com.models.Animal;
 
 public interface AnimalDAOInterface {
 
-	public Animal buscarAnimal(Integer identificador);
+	public Animal buscarAnimal(Long identificador);
 
 	public Animal buscarAnimalPorNome(String nome);
 

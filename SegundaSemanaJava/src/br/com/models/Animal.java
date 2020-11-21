@@ -2,6 +2,7 @@ package br.com.models;
 
 public class Animal {
 
+	protected Long identificador;
 	protected String nome;
 	protected Integer idade;
 	protected Float tamanho;
@@ -11,12 +12,21 @@ public class Animal {
 		super();
 	}
 
-	public Animal(String nome, Integer idade, Float tamanho, Float peso) {
+	public Animal(Long identificador,String nome, Integer idade, Float tamanho, Float peso) {
 		super();
+		this.identificador = identificador;
 		this.nome = nome;
 		this.idade = idade;
 		this.tamanho = tamanho;
 		this.peso = peso;
+	}
+
+	public Long getIdentificador() {
+		return identificador;
+	}
+
+	public void setIdentificador(Long identificador) {
+		this.identificador = identificador;
 	}
 
 	public Integer getIdade() {
@@ -54,5 +64,6 @@ public class Animal {
 	public void dizerOla() {
 		System.out.println("Olá eu sou um Animal!");
 	}
+
 
 }

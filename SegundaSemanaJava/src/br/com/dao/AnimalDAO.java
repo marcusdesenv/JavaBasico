@@ -8,32 +8,32 @@ import br.com.models.Animal;
 public class AnimalDAO implements AnimalDAOInterface {
 
 	private ArrayList<Animal> animais;
+	private Long identificadorCount;
 
 	public AnimalDAO() {
 
 		this.animais = new ArrayList<>();
-	}
-
-	public ArrayList<Animal> getAnimais() {
-		return animais;
-	}
-
-	public void setAnimais(ArrayList<Animal> animais) {
-		this.animais = animais;
+		this.identificadorCount = 0L;
 	}
 
 	@Override
-	public Animal buscarAnimal(Integer identificador) {
-		// TODO Auto-generated method stub
-		return null;
+	public Animal buscarAnimal(Long identificador) {
+
+		Animal retorno = null;
+		for (Animal a : animais) {
+			if (a.getIdentificador().equals(identificador)) {
+				retorno = a;
+			}
+		}
+		return retorno;
 	}
 
 	@Override
 	public Animal buscarAnimalPorNome(String nome) {
 		Animal retorno = null;
 		for (Animal a : animais) {
-			if (a.getNome().toUpperCase().equals(nome.toLowerCase())) {
-
+			if (a.getNome().toUpperCase().equals(nome.toUpperCase())) {
+				retorno = a;
 			}
 		}
 		return retorno;
@@ -60,6 +60,7 @@ public class AnimalDAO implements AnimalDAOInterface {
 	@Override
 	public int cadastrarAnimal(Animal animal) {
 		if (animal != null) {
+			animal.setIdentificador(this.identificadorCount++);
 			this.animais.add(animal);
 			return 1;
 		}
@@ -69,6 +70,9 @@ public class AnimalDAO implements AnimalDAOInterface {
 	@Override
 	public int cadastrarAnimal(ArrayList<Animal> animais) {
 		if (animais.size() > 0) {
+			for (Animal a : animais) {
+				a.setIdentificador(this.identificadorCount++);
+			}
 			this.animais.addAll(animais);
 			return 1;
 		}
@@ -77,7 +81,6 @@ public class AnimalDAO implements AnimalDAOInterface {
 
 	@Override
 	public ArrayList<Animal> consultarAnimais() {
-		// TODO Auto-generated method stub
 		return animais;
 	}
 
