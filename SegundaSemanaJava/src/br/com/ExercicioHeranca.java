@@ -69,9 +69,7 @@ public class ExercicioHeranca {
 	}
 
 	private static int deletarAnimalPorIdentificador(AnimalDAO dao, Scanner sc) {
-
 		Long identificador = Leitor.lerValor("Qual o registro deseja deletar ? ", sc, 0L);
-
 		if (identificador > 1) {
 			Animal a = dao.buscarAnimal(identificador);
 			return dao.deletarAnimal(a);
