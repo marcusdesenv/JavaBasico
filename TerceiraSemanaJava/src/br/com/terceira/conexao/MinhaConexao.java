@@ -1,4 +1,4 @@
-package br.com.conexao;
+package br.com.terceira.conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,26 +13,9 @@ public class MinhaConexao {
 	private static final String PORTA = "3306";
 	private static final String SCHEMA = "bd_afrodev";
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-	private static final String PARAMS = "?serverTimezone=UTC";
+	private static final String PARAMS = "?serverTimezone=UTC&useSSL=false";
 	private static Connection instance = null;
 
-	public static void main(String[] args) {
-
-		getInstance();
-		try {
-			PreparedStatement ps = instance.prepareStatement("SELECT 1 as primeiro FROM dual ");
-
-			ResultSet rs = ps.executeQuery();
-
-			if (rs.next()) {
-				rs.getInt("primeiro");
-			}
-
-		} catch (SQLException e) {
-			System.err.print(e.toString());
-		}
-
-	}
 
 	public synchronized static Connection getInstance() {
 
@@ -55,7 +38,7 @@ public class MinhaConexao {
 			throws IllegalAccessException, InstantiationException, ClassNotFoundException, SQLException {
 		Class.forName(DRIVER).newInstance();
 		Connection con = DriverManager.getConnection("jdbc:mysql://" + SERVIDOR + ":" + PORTA + "/" + SCHEMA + PARAMS,
-				USUARIO, "");
+				USUARIO , "");
 		return con;
 	}
 
