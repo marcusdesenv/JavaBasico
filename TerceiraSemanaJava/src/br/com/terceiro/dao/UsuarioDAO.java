@@ -3,6 +3,7 @@ package br.com.terceiro.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.terceira.conexao.MinhaConexao;
@@ -71,15 +72,16 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 	@Override
 	public List<Usuario> buscarUsuarios() {
+		List<Usuario> usuarios = new ArrayList<>();
 		try {
 			PreparedStatement ps = cn.prepareStatement("SELECT * FROM tb_usuario ");
 
 			ResultSet rs = ps.executeQuery();
-			return UsuarioParser.rsToListUsuario(rs);
+			usuarios = UsuarioParser.rsToListUsuario(rs);
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		} finally {
-			return null;
+			return usuarios;
 		}
 	}
 
