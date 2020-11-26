@@ -43,7 +43,7 @@ public class Leitor {
 		do {
 			System.out.println(pergunta);
 			retorno = sc.next();
-		} while (!retorno.toUpperCase().equals("SIM") || !retorno.toUpperCase().equals("NAO"));
+		} while (!retorno.toUpperCase().equals("SIM") && !retorno.toUpperCase().equals("NAO"));
 		if (retorno.toUpperCase().equals("SIM")) {
 			return true;
 		} else {
@@ -54,5 +54,17 @@ public class Leitor {
 	public static Long lerValor(String pergunta, Scanner sc, Long l) {
 		System.out.println(pergunta);
 		return sc.nextLong();
+	}
+
+	public static void limparTela() {
+		try {
+			if (System.getProperty("os.name").contains("Windows"))
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			else
+				Runtime.getRuntime().exec("clear");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 }

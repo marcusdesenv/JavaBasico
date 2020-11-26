@@ -36,7 +36,25 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 
 	@Override
+	public List<Usuario> buscarUsuariosPorParteDoNome(String nome) {
+		List<Usuario> usuarios = new ArrayList<>();
+		try {
+			PreparedStatement ps = cn.prepareStatement("SELECT * FROM "
+					+ " tb_usuario where nme_usuario like CONCAT('%','a','%') ");
+			ps.setString(1, nome);
+			ResultSet rs = ps.executeQuery();
+			usuarios = UsuarioParser.rsToListUsuario(rs);
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		} finally {
+			return usuarios;
+		}
+	}
+
+	
+	@Override
 	public Boolean verificarUsuarioESenha(String usuario, String senha) {
+		Boolean retorno = false;
 		try {
 			PreparedStatement ps = cn
 					.prepareStatement("SELECT * FROM tb_usuario where usr_usuario = ? and pwd_usuario = MD5(?)");
@@ -44,12 +62,12 @@ public class UsuarioDAO implements IUsuarioDAO {
 			ps.setString(2, senha);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				return true;
+				retorno = true;
 			}
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		} finally {
-			return false;
+			return retorno;
 		}
 	}
 
