@@ -39,8 +39,8 @@ public class UsuarioDAO implements IUsuarioDAO {
 	public List<Usuario> buscarUsuariosPorParteDoNome(String nome) {
 		List<Usuario> usuarios = new ArrayList<>();
 		try {
-			PreparedStatement ps = cn.prepareStatement("SELECT * FROM "
-					+ " tb_usuario where nme_usuario like CONCAT('%','a','%') ");
+			PreparedStatement ps = cn
+					.prepareStatement("SELECT * FROM " + " tb_usuario where nme_usuario like CONCAT('%',?,'%') ");
 			ps.setString(1, nome);
 			ResultSet rs = ps.executeQuery();
 			usuarios = UsuarioParser.rsToListUsuario(rs);
@@ -51,7 +51,6 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 	}
 
-	
 	@Override
 	public Boolean verificarUsuarioESenha(String usuario, String senha) {
 		Boolean retorno = false;
@@ -73,19 +72,21 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 	@Override
 	public Integer deletarUsuario(Long id) {
+		Integer i = 0;
 		try {
 			this.cn.setAutoCommit(false);
 			PreparedStatement ps = cn.prepareStatement("DELETE FROM tb_usuario where idt  = ?");
 			ps.setLong(1, id);
-			Integer i = ps.executeUpdate();
+			i = ps.executeUpdate();
 			this.cn.commit();
-			return i;
+
 		} catch (Exception e) {
 			this.cn.rollback();
 			System.err.println(e.toString());
 		} finally {
-			return 0;
+			return i;
 		}
+
 	}
 
 	@Override
